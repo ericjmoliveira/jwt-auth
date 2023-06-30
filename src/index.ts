@@ -10,10 +10,6 @@ app.use(express.json());
 app.use(authRoutes);
 app.use(userRoutes);
 
-app.get('/', (request, response) => {
-  return response.status(200).json({ message: 'Hello world!' });
-});
+app.get('/', (req, res) => res.status(200).json({ message: 'Hello world!' }));
 
-app.listen(port, () => {
-  console.log(`App running on port ${port}`);
-});
+app.listen(port, () => console.log(`App running on port ${port}`));
